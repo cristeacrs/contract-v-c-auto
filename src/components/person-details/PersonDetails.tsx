@@ -1,10 +1,22 @@
 import styles from "./styles.module.css";
 
-interface PropsPersonDetails {
-  title: string;
+export interface PersonDetailsData {
+  nume: string;
+  cnp?: number | null;
 }
 
-const PersonDetails = ({ title }: PropsPersonDetails) => {
+interface PropsPersonDetails {
+  title: string;
+  setData: (values: PersonDetailsData) => void;
+  defaultState: PersonDetailsData;
+}
+
+const PersonDetails = ({
+  title,
+  defaultState,
+  setData,
+}: PropsPersonDetails) => {
+  console.log(defaultState, setData);
   return (
     <div className={styles.personDetails}>
       <h2>{title}</h2>
