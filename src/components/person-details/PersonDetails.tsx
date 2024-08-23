@@ -26,7 +26,7 @@ interface PropsPersonDetails {
 const validationMap: any = {
   numePrenume: z.string()
     .refine(
-      (value) => /^[a-zA-Zs]{2,70}$/.test(value ?? ""),
+      (value) => /^[a-zA-Z ]{2,70}$/.test(value ?? ""),
       'Nume si prenume accepta doar litere si spatii, si trebuie sa fie intre 2 si 70 caractere'
     ),
   tara: z.string()
@@ -71,6 +71,7 @@ const PersonDetails = ({
             onTextChange("numePrenume", event.currentTarget.value)
           }
           showCount
+          minLength={2}
           maxLength={70}
           status={validation.numePrenume ? "error" : undefined}
           placeholder="Introduceti numele si prenumele"
