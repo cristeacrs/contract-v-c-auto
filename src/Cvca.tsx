@@ -1,23 +1,34 @@
 //import { useState } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PersonDetails, {
   PersonDetailsData,
 } from "./components/person-details/PersonDetails";
 import styles from "./Cvca.module.css";
 
 function Cvca() {
-  // const [count, setCount] = useState(0);
-  const [buyer, setBuyer] = useState<PersonDetailsData>({
-    nume: "",
-    cnp: null,
-  });
+  // Seller state management
   const [seller, setSeller] = useState<PersonDetailsData>({
-    nume: "",
+    numePrenume: "",
+    tara: "Romania",
     cnp: null,
   });
 
+  // Buyer state management
+  const [buyer, setBuyer] = useState<PersonDetailsData>({
+    numePrenume: "",
+    tara: "Romania",
+    cnp: null,
+  });
+
+  // Effects
+  useEffect(() => {
+    console.clear();
+    console.log('Valori modificate - buyer:', buyer);
+    console.log('Valori modificate - seller:', seller);
+  }, [buyer, seller]);
+
+
   return (
-    //fragment react <>
     <div className={styles.main}>
       <PersonDetails
         title="1.Persoana care instrainează (vanzatorul)"
