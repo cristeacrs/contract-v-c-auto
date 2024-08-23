@@ -83,7 +83,7 @@ const PersonDetails = ({
 
         {/** field tara  */}
         <Typography.Title level={5}>
-          Tara - obligatoriu<div className={styles.required}>*</div>
+          Tara<div className={styles.required}>*</div>
         </Typography.Title>
         <Select
           status={validation.tara ? "error" : undefined}
