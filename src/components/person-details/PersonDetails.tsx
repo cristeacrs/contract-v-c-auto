@@ -70,9 +70,8 @@ const PersonDetails = ({
           onChange={(event) =>
             onTextChange("numePrenume", event.currentTarget.value)
           }
-          count={{
-            max: 70,
-          }}
+          showCount
+          maxLength={70}
           status={validation.numePrenume ? "error" : undefined}
           placeholder="Introduceti numele si prenumele"
           defaultValue={defaultState.numePrenume}
